@@ -23,7 +23,7 @@ public class DemoWebShopTests extends TestBase {
 
         LoginData data = ConfigFactory.create(LoginData.class, System.getProperties());
 
-        page    .login(data.getEmail(),data.getPassword())
+        page.login(data.getEmail(), data.getPassword())
                 .checkLogin(data.getEmail());
     }
 
@@ -34,8 +34,8 @@ public class DemoWebShopTests extends TestBase {
 
         DemoWebShopData data = new DemoWebShopData();
 
-        page    .registrationApi(data)
-                .login(data.email,data.password)
+        page.registrationApi(data)
+                .login(data.email, data.password)
                 .checkLogin(data.email);
     }
 
@@ -45,13 +45,13 @@ public class DemoWebShopTests extends TestBase {
     void accountChangeInfoTest() {
         DemoWebShopData data = new DemoWebShopData();
 
-        page    .registrationApi(data)
-                .login(data.email,data.password)
+        page.registrationApi(data)
+                .login(data.email, data.password)
                 .checkLogin(data.email);
 
         data = new DemoWebShopData();
 
-        page    .editAccountInfo(data)
+        page.editAccountInfo(data)
                 .checkAccountInfo(data);
     }
 }

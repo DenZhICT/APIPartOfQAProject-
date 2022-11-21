@@ -48,22 +48,22 @@ dependencies {
 }
 
 task All(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags 'All'
     }
 }
 task Login(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags 'Login'
     }
 }
 task Registration(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags 'Registration'
     }
 }
 task ChangeInfo(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags 'ChangeInfo'
     }
 }

@@ -26,14 +26,14 @@ public class DemoWebShopPage {
         AtomicReference<Response> response = new AtomicReference<>();
 
         step("Достаём Cookie и Token", () ->
-        response.set(given()
-                .filter(CustomApiListener.withCustomTemplates())
-                .when()
-                .get("/register")
-                .then()
-                .statusCode(200)
-                .extract()
-                .response()));
+                response.set(given()
+                        .filter(CustomApiListener.withCustomTemplates())
+                        .when()
+                        .get("/register")
+                        .then()
+                        .statusCode(200)
+                        .extract()
+                        .response()));
 
         return response.get();
     }
@@ -51,7 +51,7 @@ public class DemoWebShopPage {
         String token = register.htmlPath().getString("**.find{it.@name == '__RequestVerificationToken'}.@value");
         String cookie = register.cookie(tokenName);
 
-        step("Регистрация нового пользователя с почтой "+data.email, () -> {
+        step("Регистрация нового пользователя с почтой " + data.email, () -> {
             given()
                     .filter(CustomApiListener.withCustomTemplates())
                     .formParam("Gender", data.gender.charAt(0))
@@ -72,7 +72,7 @@ public class DemoWebShopPage {
     }
 
     public DemoWebShopPage login(String login, String password) {
-        step("Получение Cookie пользователя c почтой "+login, () -> {
+        step("Получение Cookie пользователя c почтой " + login, () -> {
             getCookie =
                     given()
                             .filter(CustomApiListener.withCustomTemplates())
@@ -95,8 +95,8 @@ public class DemoWebShopPage {
         step("Открываем главную страницу", () ->
                 open(""));
 
-        step("Проверяет совпадение почты с "+email, () ->
-            $(".account").shouldHave(text(email)));
+        step("Проверяет совпадение почты с " + email, () ->
+                $(".account").shouldHave(text(email)));
     }
 
     public DemoWebShopPage editAccountInfo(DemoWebShopData newData) {
@@ -113,6 +113,7 @@ public class DemoWebShopPage {
         });
         return this;
     }
+
     public void checkAccountInfo(DemoWebShopData newData) {
         refresh();
         step("Проверка изменения данных", () -> {
