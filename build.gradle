@@ -47,6 +47,10 @@ dependencies {
     testImplementation('org.aeonbits.owner:owner:1.0.12')
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 task All(type: Test) {
     useJUnitPlatform {
         includeTags 'All'
@@ -77,13 +81,5 @@ tasks.withType(Test) {
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
-    }
-
-
-    compileJava {
-        options.encoding = 'UTF-8'
-    }
-    compileTestJava {
-        options.encoding = 'UTF-8'
     }
 }
