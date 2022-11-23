@@ -91,5 +91,5 @@ ${TEST_TYPE}
 ## :film_strip: Пример видео о прохождении тестов
 
 <p align="center">
-<img title="Selenoid Video" src="images/gif/video1.gif" width="250" height="153"  alt="video">
+<img title="Selenoid Video" src="images/gif/video1.gif" width="700" height="500"  alt="video">
 </p>
