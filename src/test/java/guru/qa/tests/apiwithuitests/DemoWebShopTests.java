@@ -1,4 +1,4 @@
-package guru.qa.tests.apiWithUiTests;
+package guru.qa.tests.apiwithuitests;
 
 
 import guru.qa.base.TestBase;
