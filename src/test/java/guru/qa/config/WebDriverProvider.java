@@ -3,6 +3,7 @@ package guru.qa.config;
 import com.codeborne.selenide.Configuration;
 import io.restassured.RestAssured;
 import org.aeonbits.owner.ConfigFactory;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WebDriverProvider {
 
@@ -21,6 +22,11 @@ public class WebDriverProvider {
         String env = System.getProperty("environment");
         if (env != null && env.equals("remote")) {
             Configuration.remote = config.getRemoteUrl();
+
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.browserCapabilities = capabilities;
         }
     }
 }
